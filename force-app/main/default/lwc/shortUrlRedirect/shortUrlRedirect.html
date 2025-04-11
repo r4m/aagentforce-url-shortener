@@ -1,0 +1,15 @@
+<template>
+    <div class="redirect-container">
+        <template if:true={errorMessage}>
+            <p class="redirect-title" style="color: #d9534f;">{errorMessage}</p>
+        </template>
+        <template if:false={errorMessage}>
+            <div class="spinner-wrapper">
+                <div class="custom-spinner"></div>
+            </div>
+
+            <p class="redirect-title">Redirecting...</p>
+            <p class="redirect-subtext">Please wait a moment</p>
+        </template>
+    </div>
+</template>
