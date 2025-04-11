@@ -10,7 +10,7 @@ This guide will walk you through creating an **internal URL shortening service**
 
 ---
 
-## 🔨 1. Create the Custom Object `Shortened_URL__c`
+## 1. Create the Custom Object `Shortened_URL__c`
 
 ### Navigate to:
 
@@ -288,7 +288,7 @@ export default class ShortUrlRedirect extends LightningElement {
 
 1. Go to **Setup > Digital Experiences > All Sites**
 2. Click **Builder** next to your site
-3. Click the ⚙️ gear icon > **General** > Open Site Settings
+3. Click the gear icon > **General** > Open Site Settings
 4. Click on the **Guest User Profile** link (e.g., `sfpwebhook Profile`)
 5. Under **Apex Class Access**, click **Edit** and add `ShortUrlRedirectController`
 
