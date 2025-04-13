@@ -40,6 +40,8 @@ Formula:
 ```
 where you must replace `<YOUR_SITE>` with your specific Salesforce org site.
 
+![Create Custom Object](screenshots/1_Create%20the%20Custom%20Object%20Shortened_URL__c.png)
+
 ---
 
 ## 2. Apex Class to Generate `Short_Code__c`
@@ -75,6 +77,8 @@ public class ShortURLFlowHelper {
     }
 }
 ```
+
+![Apex Class to Generate Short Code](screenshots/2_Apex%20Class%20to%20Generate%20Short_Code__c.png)
 
 ---
 
@@ -114,6 +118,12 @@ public class ShortURLFlowHelper {
 - Return only the first record
 - Assign `Short_URL__c` to `ShortURL`
 
+![Flow from LongURL 0](screenshots/3_Flow%20to%20Generate%20Short%20URL%20from%20LongURL%20_0.png)
+![Flow from LongURL 1](screenshots/3_Flow%20to%20Generate%20Short%20URL%20from%20LongURL%20_1.png)
+![Flow from LongURL 2](screenshots/3_Flow%20to%20Generate%20Short%20URL%20from%20LongURL%20_2.png)
+![Flow from LongURL 3](screenshots/3_Flow%20to%20Generate%20Short%20URL%20from%20LongURL%20_3.png)
+![Flow from LongURL 4](screenshots/3_Flow%20to%20Generate%20Short%20URL%20from%20LongURL%20_4.png)
+
 ---
 
 ## 4. Public Redirect Page
@@ -125,6 +135,9 @@ public class ShortURLFlowHelper {
    - URL: `/redirect`
 3. Add the `shortUrlRedirect` component
 4. Publish the site
+
+![Public Redirect Page 0](screenshots/4_Public%20Redirect%20Page_0.png)
+![Public Redirect Page 1](screenshots/4_Public%20Redirect%20Page_1.png)
 
 ---
 
@@ -284,19 +297,19 @@ export default class ShortUrlRedirect extends LightningElement {
 
 ---
 
-## 6. Set Permissions for Guest User Profile and Agentforce Users
+## 6. Set Permissions for Guest User and Agentforce Users
 
 ### Grant Apex Class Access
 
 1. Go to **Setup > Digital Experiences > All Sites**
 2. Click **Builder** next to your site
 3. Click the gear icon > **General** > Open Site Settings
-4. Click on the **Guest User Profile** link (e.g., `sfpwebhook Profile`)
+4. Click on the **Guest User Profile** link (e.g., `sfpwebhook Profile`) at the bottom of the modal window
 5. Under **Apex Class Access**, click **Edit** and add `ShortUrlRedirectController`
 
 ### Grant Object and Field Permissions
 
-1. In the **Guest User Profile** settings:
+1. In the **Guest User Profile** (e.g., `sfpwebhook Profile`) settings:
 
    - Go to **Object Settings > Shortened\_URL\_\_c**
    - ✅ Enable **Read Access** to the object
@@ -307,6 +320,12 @@ export default class ShortUrlRedirect extends LightningElement {
    - Go to **Object Settings > Shortened\_URL\_\_c**
    - ✅ Enable **Read and Write Access** to the object
    - ✅ Ensure visibility for `Short_Code__c`, `Long_URL__c`, and `Short_URL__c` fields
+
+![Guest User Profile 0](screenshots/5_Set%20Permissions%20for%20Guest%20User%20Profile_0.png)
+![Guest User Profile 1](screenshots/5_Set%20Permissions%20for%20Guest%20User%20Profile_1.png)
+![Guest User Profile 2](screenshots/5_Set%20Permissions%20for%20Guest%20User%20Profile_2.png)
+![Guest User Profile 3](screenshots/5_Set%20Permissions%20for%20Guest%20User%20Profile_3.png)
+![Guest User Profile 4](screenshots/5_Set%20Permissions%20for%20Guest%20User%20Profile_4.png)
 
 ### Set Sharing Settings (OWD)
 
@@ -327,3 +346,5 @@ export default class ShortUrlRedirect extends LightningElement {
    - `ShortURL` → `https://<YOUR_SITE>.my.site.com/sfpwebhook/s/a1f9c3`
 3. Visit the link
 4. Confirm that the redirect works correctly
+
+
