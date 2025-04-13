@@ -118,6 +118,8 @@ public class ShortURLFlowHelper {
 
 ## 4. Public Redirect Page
 
+> Notice: you can you whatever site you prefer, even a newly created one. In my case I used the predefined `sfpwebhook` website.
+
 1. Go to **Setup > All Sites > [your site with /s/ path] > Workspace > Builder**
 2. Create a new page named `RedirectPage`
    - URL: `/redirect`
